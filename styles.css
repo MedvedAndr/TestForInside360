@@ -1,0 +1,323 @@
+body
+{
+	width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+#background
+{
+	/* display: none; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    background-color: #00000099;
+}
+
+.window
+{
+	display: flex;
+    flex-direction: column;
+    width: 490px;
+    height: 250px;
+    position: absolute;
+    z-index: 1010;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    font-size: 20px;
+    color: #000000;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 20px 20px 20px;
+}
+
+#end_window
+{
+	display: none;
+}
+
+.field
+{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 3;
+}
+
+.field + .field
+{
+	margin-top: 10px;
+}
+
+.field > .field_head
+{
+	text-align: center;
+    margin: 0px 0px 10px;
+}
+
+.field > .field_body
+{
+	text-align: center;
+}
+
+.buttons
+{
+	flex: 1;
+}
+
+.button
+{
+	font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #ffffff;
+    background-color: #575757;
+    border-radius: 5px;
+    padding: 10px 30px 10px;
+    cursor: pointer;
+	transition-property: color, background-color;
+	transition-duration: 0.5s;
+}
+
+.button:hover
+{
+	color: #000000;
+	background-color: #999999;
+}
+
+input[type="text"]
+{
+	display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 3px 5px 3px;
+    outline: none;
+}
+
+#content
+{
+	width: 100%;
+    height: auto;
+    display: flex;
+	box-sizing: border-box;
+    padding: 10px 10px 10px;
+}
+
+.left_col
+{
+	flex: 3;
+    margin-right: 10px;
+}
+
+.right_col
+{
+	flex: 1;
+}
+
+.h1
+{
+	font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0px 10px;
+}
+
+#game
+{
+	position: relative;
+    width: 100%;
+    height: 800px;
+    background: url(/images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.coast
+{
+	width: 600px;
+    height: 100%;
+	position: absolute;
+    top: 0px;
+}
+
+.coast.left
+{
+	left: 0px;
+}
+
+.coast.right
+{
+	right: 0px;
+}
+
+.place
+{
+	width: 150px;
+    height: 150px;
+    position: absolute;
+}
+
+.coast.right .place
+{
+	transform: scale(-1, 1);
+}
+
+.coast.left .wolf_place
+{
+	top: 280px;
+    left: 350px;
+}
+
+.coast.left .goat_place
+{
+	top: 340px;
+    left: 190px;
+}
+
+.coast.left .cabbage_place
+{
+	top: 400px;
+    left: 40px;
+}
+
+.coast.right .wolf_place
+{
+	top: 260px;
+    right: 330px;
+}
+
+.coast.right .goat_place
+{
+	top: 320px;
+    right: 170px;
+}
+
+.coast.right .cabbage_place
+{
+	top: 370px;
+    right: 20px;
+}
+
+.wolf
+{
+    background: url(/images/wolf.png);
+}
+
+.goat
+{
+	background: url(/images/goat.png);
+}
+
+.cabbage
+{
+	background: url(/images/cabbage.png);
+}
+
+.object
+{
+	width: 100%;
+    height: 100%;
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.river
+{
+	width: 1050px;
+    height: 200px;
+    position: absolute;
+    top: 520px;
+    left: 190px;
+}
+
+.boat
+{
+	width: 400px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    transition-property: left;
+	transition-duration: 2s;
+}
+
+.boat.left
+{
+	left: 0px;
+	/* transform: scale(1, 1); */
+}
+
+.boat.right
+{
+	left: calc(100% - 400px);
+	/* transform: scale(-1, 1); */
+}
+
+.boat_object
+{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    background: url(/images/boat.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.boat_place
+{
+	bottom: 70px;
+    left: 50px;
+    z-index: 50;
+}
+
+#go_boat
+{
+	position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.table
+{
+	width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead td
+{
+	border: 1px solid #000000;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    padding: 5px 5px 5px;
+}
+
+.table tbody td
+{
+	border: 1px solid #000000;
+    vertical-align: middle;
+    padding: 5px 5px 5px;
+}
+
+.table tbody td.center
+{
+	text-align: center;
+}
